@@ -14,8 +14,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #f5f5f5; /* light grey instead of black */
+    --foreground: #171717; /* keep text dark for readability */
   }
 }
 
@@ -23,4 +23,42 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+button:focus,
+input:focus,
+select:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.table-container {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 768px) {
+  .table-container {
+    font-size: 14px;
+  }
+  
+  .table-container th,
+  .table-container td {
+    padding: 8px 6px;
+    min-width: 100px;
+  }
+}
+
+
+h3, p, span, th {
+  color: var(--foreground);
 }
