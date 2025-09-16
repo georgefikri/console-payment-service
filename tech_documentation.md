@@ -1,5 +1,12 @@
 # Tech Documentation - Payment Console
 
+## Pages
+
+- / - Home page with payment list and search
+- /new - Create new payment form
+- /payments/[id] - Payment details and management
+- /pay/[publicId] - Customer payment completion
+
 ## Key Decisions
 
 ### Architecture
@@ -110,16 +117,3 @@ Frontend-only approach with Next.js App Router, React hooks, and basic styling.
 - **Server-side Rendering**: Initial page load optimized
 - **localStorage I/O**: Acceptable for demo scale
 - **URL Updates**: `router.replace()` prevents browser history pollution
-
-## Future Scalability
-
-### When to Consider Database
-- **>1000 payments**: Switch to server-side pagination/filtering
-- **Concurrent Users**: Add proper database with transactions
-- **Complex Queries**: Need indexed searches, date ranges, etc.
-
-### Performance Optimizations
-- Add virtualization for large payment lists
-- Implement debounced search input
-- Add caching layer for frequent operations
-- Consider real-time updates with WebSockets
