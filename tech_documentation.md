@@ -110,10 +110,3 @@ src/
 
 **Time Estimate: 1-2 days (8-16 hours)**  
 Frontend-only approach with Next.js App Router, React hooks, and basic styling.
-
-## Performance Considerations
-
-- **Client-side Filtering**: Fast for small datasets (<1000 payments)
-- **Server-side Rendering**: Initial page load optimized
-- **localStorage I/O**: Acceptable for demo scale
-- **URL Updates**: `router.replace()` prevents browser history pollution
