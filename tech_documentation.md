@@ -77,7 +77,7 @@ src/
 
 ### Business Logic
 
-- **Currency**: Fixed to EGP as specified
+- **Currency**: Supports multiple currencies via enum (EGP, USD, EUR, GBP, SAR, AED)
 - **Amount**: Stored in piasters (cents), displayed as EGP with 2 decimals
 - **Status Flow**: pending → paid/canceled (no reversal)
 - **No Authentication**: Open access to all payment operations
