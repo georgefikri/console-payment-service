@@ -106,7 +106,7 @@ src/
 ## Task Estimate
 
 **T-shirt Size: Medium (M)**  
-4 pages, client-side search, localStorage persistence, and custom hooks for a mid-level developer.
+4 pages, client-side search, localStorage persistence, and custom hooks.
 
 **Time Estimate: 1-2 days (8-16 hours)**  
 Frontend-only approach with Next.js App Router, React hooks, and basic styling.
