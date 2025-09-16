@@ -5,13 +5,14 @@ import { useRouter } from 'next/navigation';
 import { createPayment, updatePayment, getPaymentByPublicId } from '@/lib/storage';
 import { generatePaymentId, generatePublicId } from '@/lib/id';
 import type { Payment } from '@/types/payments';
+import { Currency } from '@/types/enums';
 
 export function usePaymentActions() {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const createNewPayment = async (amount: number, merchantOrderId: string) => {
+  const createNewPayment = async (amount: number, merchantOrderId: string, currency: Currency = Currency.EGP) => {
     setLoading(true);
     setError(null);
     
@@ -29,7 +30,7 @@ export function usePaymentActions() {
         id: generatePaymentId(),
         publicId: generatePublicId(),
         amount,
-        currency: 'EGP',
+        currency,
         status: 'pending',
         merchantOrderId: merchantOrderId.trim(),
         createdAt: now,

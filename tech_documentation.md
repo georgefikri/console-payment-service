@@ -95,3 +95,31 @@ src/
 - **Merchant Order ID**: Required, trimmed whitespace
 - **Status Updates**: Only allowed from 'pending' status
 - **File Persistence**: Graceful error handling, fallback to empty array
+
+## Task Estimate
+
+**T-shirt Size: Medium (M)**  
+4 pages, client-side search, localStorage persistence, and custom hooks for a mid-level developer.
+
+**Time Estimate: 1-2 days (8-16 hours)**  
+Frontend-only approach with Next.js App Router, React hooks, and basic styling.
+
+## Performance Considerations
+
+- **Client-side Filtering**: Fast for small datasets (<1000 payments)
+- **Server-side Rendering**: Initial page load optimized
+- **localStorage I/O**: Acceptable for demo scale
+- **URL Updates**: `router.replace()` prevents browser history pollution
+
+## Future Scalability
+
+### When to Consider Database
+- **>1000 payments**: Switch to server-side pagination/filtering
+- **Concurrent Users**: Add proper database with transactions
+- **Complex Queries**: Need indexed searches, date ranges, etc.
+
+### Performance Optimizations
+- Add virtualization for large payment lists
+- Implement debounced search input
+- Add caching layer for frequent operations
+- Consider real-time updates with WebSockets
