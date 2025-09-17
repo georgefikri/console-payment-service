@@ -11,7 +11,6 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Load payments on mount
     try {
       const loadedPayments = getAllPayments();
       setPayments(loadedPayments);

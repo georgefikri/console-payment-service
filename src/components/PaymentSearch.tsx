@@ -15,21 +15,18 @@ export default function PaymentSearch({ onFiltersChange }: PaymentSearchProps) {
   const [search, setSearch] = useState(searchParams.get('search') || '');
   const [status, setStatus] = useState(searchParams.get('status') || 'all');
 
-  // Handle search input change
   const handleSearchChange = (value: string) => {
     setSearch(value);
     onFiltersChange(value, status);
     updateURL(value, status, router);
   };
 
-  // Handle status change
   const handleStatusChange = (value: string) => {
     setStatus(value);
     onFiltersChange(search, value);
     updateURL(search, value, router);
   };
 
-  // Initialize filters on mount
   useEffect(() => {
     onFiltersChange(search, status);
   }, []);

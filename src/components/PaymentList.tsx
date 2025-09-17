@@ -15,7 +15,6 @@ export default function PaymentList({ initialPayments, onUpdate }: PaymentListPr
   const [searchTerm, setSearchTerm] = useState('');
   const [statusFilter, setStatusFilter] = useState('all');
 
-  // Filter payments based on current filters
   const filteredPayments = useMemo(() => {
     return filterAndSortPayments(initialPayments, searchTerm, statusFilter);
   }, [initialPayments, searchTerm, statusFilter]);
@@ -28,7 +27,7 @@ export default function PaymentList({ initialPayments, onUpdate }: PaymentListPr
   return (
     <>
       <PaymentSearch onFiltersChange={handleFiltersChange} />
-      
+
       {filteredPayments.length === 0 ? (
         <div className="text-center py-12 text-gray-500">
           <p>No payments found.</p>
